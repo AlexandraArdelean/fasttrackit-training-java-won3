@@ -1,6 +1,7 @@
 package org.fasttrackit.course3;
 
 public class Professor {
+
     private String lastName;
     private String firstName;
     private String dateOfBirth;

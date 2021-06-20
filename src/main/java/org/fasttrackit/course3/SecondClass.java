@@ -2,6 +2,7 @@ package org.fasttrackit.course3;
 
 public class SecondClass {
 
+
 }
 //System.out.println("Hello world");
 //Car alexandrasCar = new Car();

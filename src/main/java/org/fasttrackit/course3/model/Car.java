@@ -7,6 +7,7 @@ public class Car {
     private String carColor;
     private int carWeight;
 
+
     public String getBrand() {
         return brand;
     }
