@@ -1,4 +1,4 @@
-package course5.Tema_part1;
+package course5.Tema_var1;
 
 public class University {
     public static void main(String[] args) {
@@ -22,6 +22,7 @@ public class University {
         professor.firstName();
         professor.lastName();
         professor.dateOfBirth();
+
 
         professor.setDateOfHiring("Data angajarii in cadrul facultatii: 01.09.2009. ");
         System.out.println(professor.getDateOfHiring());

@@ -1,6 +1,6 @@
-package course5.Tema_part1;
+package course5.Tema_var1;
 
-public enum StudentType {
+public enum StudentType implements ScholarType {
     BACHELOR("A absolvit liceul"),
     MASTER("Urmeaza sa inceapa masteratul"),
     PHD("Se gandeste sa faca si un doctorat");

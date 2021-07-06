@@ -1,4 +1,4 @@
-package course5.Tema_part1;
+package course5.Tema_var1;
 
 import java.util.Objects;
 
@@ -38,6 +38,7 @@ public class Professor implements Human{
         System.out.println("Nascut la 01 martie 1969.");
 
     }
+
 
     @Override
     public String toString() {

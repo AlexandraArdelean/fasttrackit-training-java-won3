@@ -1,4 +1,4 @@
-package course5.Tema_part1;
+package course5.Tema_var1;
 
 import java.util.Objects;
 
@@ -7,6 +7,8 @@ public class Student implements Human {
     String dateOfEnrollment;
     String facultyName;
     String specializationName;
+
+
 
     public String getDateOfEnrollment() {
         return dateOfEnrollment;
@@ -47,6 +49,7 @@ public class Student implements Human {
         System.out.println("Nascuta la 24 noiembrie 1991.");
 
     }
+
 
 
     @Override

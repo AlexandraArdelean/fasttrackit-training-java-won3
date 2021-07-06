@@ -1,4 +1,4 @@
-package org.fasttrackit.course3;
+package course3;
 
 public class Professor {
 

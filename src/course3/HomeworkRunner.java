@@ -1,5 +1,4 @@
-package main.java.org.fasttrackit.course3;
-import org.fasttrackit.course3.model.Car;
+package course3;
 
 
 public class HomeworkRunner {
@@ -7,7 +6,7 @@ public class HomeworkRunner {
 
     public static void main(String[] args) {
 
-        org.fasttrackit.course3.Professor professor = new org.fasttrackit.course3.Professor();
+        Professor professor = new Professor();
 
         professor.setFirstName("Pop");
         professor.setLastName("Ciprian");
