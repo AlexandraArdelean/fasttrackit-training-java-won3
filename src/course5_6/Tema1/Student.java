@@ -1,14 +1,17 @@
-package course5.Tema_var2;
+package course5_6.Tema1;
 
 import java.util.Objects;
 
-public class Professor implements Human {
-    private String lastName;
+public class Student implements Human {
     private String firstName;
+    private String lastName;
     private String dateOfBirth;
-    private String dateOfHiring;
+    private String dateOfEnrollment;
+    private String facultyName;
     private String specializationName;
-    ProfessorType type;
+    StudentType type;
+
+
 
     @Override
     public String getFirstName() {
@@ -41,18 +44,27 @@ public class Professor implements Human {
     }
 
     @Override
-    public ScholarType getType() {
+    public StudentType getType() {
         return type;
     }
 
 
 
-    public String getDateOfHiring() {
-        return dateOfHiring;
+
+    public String getDateOfEnrollment() {
+        return dateOfEnrollment;
     }
 
-    public void setDateOfHiring(String dateOfHiring) {
-        this.dateOfHiring = dateOfHiring;
+    public void setDateOfEnrollment(String dateOfEnrollment) {
+        this.dateOfEnrollment = dateOfEnrollment;
+    }
+
+    public String getFacultyName() {
+        return facultyName;
+    }
+
+    public void setFacultyName(String facultyName) {
+        this.facultyName = facultyName;
     }
 
     public String getSpecializationName() {
@@ -65,11 +77,12 @@ public class Professor implements Human {
 
     @Override
     public String toString() {
-        return "Professor{" +
-                "lastName='" + lastName + '\'' +
-                ", firstName='" + firstName + '\'' +
+        return "Student{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
                 ", dateOfBirth='" + dateOfBirth + '\'' +
-                ", dateOfHiring='" + dateOfHiring + '\'' +
+                ", dateOfEnrollment='" + dateOfEnrollment + '\'' +
+                ", facultyName='" + facultyName + '\'' +
                 ", specializationName='" + specializationName + '\'' +
                 '}';
     }
@@ -78,12 +91,12 @@ public class Professor implements Human {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Professor professor = (Professor) o;
-        return Objects.equals(lastName, professor.lastName) && Objects.equals(firstName, professor.firstName) && Objects.equals(dateOfBirth, professor.dateOfBirth) && Objects.equals(dateOfHiring, professor.dateOfHiring) && Objects.equals(specializationName, professor.specializationName);
+        Student student = (Student) o;
+        return Objects.equals(firstName, student.firstName) && Objects.equals(lastName, student.lastName) && Objects.equals(dateOfBirth, student.dateOfBirth) && Objects.equals(dateOfEnrollment, student.dateOfEnrollment) && Objects.equals(facultyName, student.facultyName) && Objects.equals(specializationName, student.specializationName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(lastName, firstName, dateOfBirth, dateOfHiring, specializationName);
+        return Objects.hash(firstName, lastName, dateOfBirth, dateOfEnrollment, facultyName, specializationName);
     }
 }

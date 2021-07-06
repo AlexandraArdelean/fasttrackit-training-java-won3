@@ -1,4 +1,4 @@
-package course5.cCount_vCount;
+package course5_6.cCount_vCount;
 
 public class MainRunner {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package course5.Tema_var2;
+package course5_6.Tema1;
 
 public interface Human {
 
