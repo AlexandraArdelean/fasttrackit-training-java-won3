@@ -1,4 +1,4 @@
-package course5_6.Tema1;
+package course5_6hw.Tema1;
 
 public enum StudentType implements ScholarType{
     BACHELOR("A absolvit liceul"),

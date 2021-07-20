@@ -1,9 +1,9 @@
-package course7;
+package course7_8hw.Hw1;
 
 public enum DifficultyLevel {
     EASY,
     MEDIUM,
-    HARD;
+    HARD
 
 
 }

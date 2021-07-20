@@ -1,4 +1,4 @@
-package course5_6.cCount_vCount;
+package course5_6hw.cCount_vCount;
 
 public class Main {
     public void switchCount(String count){
