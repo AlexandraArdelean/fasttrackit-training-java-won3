@@ -17,6 +17,7 @@ public class Main {
 
                 }
             System.out.println("Nr. vocale este: " + vCount);
+                System.out.println("Nr. de consoane este: " + cCount);
                 break;
 
 
@@ -29,6 +30,7 @@ public class Main {
                 }
 
                         System.out.println("Nr. consoane este: " + cCount);
+                System.out.println("Nr. de vocale este: " + vCount);
 }
 
 

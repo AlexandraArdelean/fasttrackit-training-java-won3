@@ -5,7 +5,7 @@ public class Main {
 
         //Student
 
-        Student student = new Student();
+       /* Student student = new Student();
         student.setFirstName("Alexandra ");
         System.out.print(student.getFirstName());
         student.setLastName("Ardelean");
@@ -39,4 +39,5 @@ public class Main {
         System.out.println(professor.getSpecializationName());
         System.out.println(ProfessorType.ASSOCIATE.getPositionType());
     }
-}
+  */
+    }}

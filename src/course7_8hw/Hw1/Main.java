@@ -52,8 +52,9 @@ public class Main {
 
         Set<String> s = assignmentList.stream()
                 .map(n -> n.getUniqueID())
+                .peek(s1->System.out.println(s1))
                 .collect(Collectors.toSet());
-        System.out.println(s);
+
 
 
         //1.2. Using a List<Assignments> as input,
@@ -63,8 +64,9 @@ public class Main {
 
         List<Assignment> difficulty = assignmentList.stream()
                 .filter(x -> x.getMyLev() != DifficultyLevel.HARD)
+                .peek(x->System.out.println(x))
                 .collect(Collectors.toList());
-        System.out.println(difficulty);
+
 
 
         //Using a List<Assignments> as input, use streams to return a

@@ -8,7 +8,25 @@ public class Professor implements Human {
     private String dateOfBirth;
     private String dateOfHiring;
     private String specializationName;
+    private String dateOfEnrollment;
+    private String facultyName;
     ProfessorType type;
+    private String id;
+
+
+    public Professor(String lastName, String firstName, String dateOfBirth, String dateOfHiring,
+                     String specializationName, String dateOfEnrollment,
+                     String facultyName, ProfessorType type, String id) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.dateOfBirth = dateOfBirth;
+        this.dateOfHiring = dateOfHiring;
+        this.specializationName = specializationName;
+        this.dateOfEnrollment = dateOfEnrollment;
+        this.facultyName = facultyName;
+        this.type = type;
+        this.id = id;
+    }
 
     @Override
     public String getFirstName() {
@@ -16,7 +34,8 @@ public class Professor implements Human {
     }
 
     @Override
-    public void setFirstName(String firstName) {this.firstName = firstName;
+    public void setFirstName(String firstName) {
+        this.firstName=firstName;
 
     }
 
@@ -26,7 +45,8 @@ public class Professor implements Human {
     }
 
     @Override
-    public void setLastName(String lastName) {this.lastName = lastName;
+    public void setLastName(String lastName) {
+        this.lastName=lastName;
 
     }
 
@@ -36,31 +56,58 @@ public class Professor implements Human {
     }
 
     @Override
-    public void setDateOfBirth(String dateOfBirth) {this.dateOfBirth = dateOfBirth;
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth=dateOfBirth;
+
+    }
+
+    @Override
+    public String getDateOfEnrollment() {
+        return dateOfEnrollment;
+    }
+
+    @Override
+    public void setDateOfEnrollment(String dateOfEnrollment) {
+        this.dateOfEnrollment=dateOfEnrollment;
+
+    }
+
+    @Override
+    public String getFacultyName() {
+        return facultyName;
+    }
+
+    @Override
+    public void setFacultyName(String facultyName) {
+        this.facultyName=facultyName;
+
+    }
+
+    @Override
+    public String getSpecializationName() {
+        return specializationName;
+    }
+
+    @Override
+    public void setSpecializationName(String specializationName) {
+        this.specializationName=specializationName;
+
+    }
+
+    @Override
+    public String getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(String id) {
+        this.id=id;
 
     }
 
     @Override
     public ScholarType getType() {
         return type;
-    }
-
-
-
-    public String getDateOfHiring() {
-        return dateOfHiring;
-    }
-
-    public void setDateOfHiring(String dateOfHiring) {
-        this.dateOfHiring = dateOfHiring;
-    }
-
-    public String getSpecializationName() {
-        return specializationName;
-    }
-
-    public void setSpecializationName(String specializationName) {
-        this.specializationName = specializationName;
     }
 
     @Override
@@ -71,6 +118,10 @@ public class Professor implements Human {
                 ", dateOfBirth='" + dateOfBirth + '\'' +
                 ", dateOfHiring='" + dateOfHiring + '\'' +
                 ", specializationName='" + specializationName + '\'' +
+                ", dateOfEnrollment='" + dateOfEnrollment + '\'' +
+                ", facultyName='" + facultyName + '\'' +
+                ", type=" + type +
+                ", id='" + id + '\'' +
                 '}';
     }
 
@@ -79,11 +130,16 @@ public class Professor implements Human {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Professor professor = (Professor) o;
-        return Objects.equals(lastName, professor.lastName) && Objects.equals(firstName, professor.firstName) && Objects.equals(dateOfBirth, professor.dateOfBirth) && Objects.equals(dateOfHiring, professor.dateOfHiring) && Objects.equals(specializationName, professor.specializationName);
+        return Objects.equals(lastName, professor.lastName) && Objects.equals(firstName, professor.firstName)
+                && Objects.equals(dateOfBirth, professor.dateOfBirth) && Objects.equals(dateOfHiring, professor.dateOfHiring)
+                && Objects.equals(specializationName, professor.specializationName) &&
+                Objects.equals(dateOfEnrollment, professor.dateOfEnrollment) && Objects.equals(facultyName, professor.facultyName)
+                && type == professor.type && Objects.equals(id, professor.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(lastName, firstName, dateOfBirth, dateOfHiring, specializationName);
+        return Objects.hash(lastName, firstName, dateOfBirth, dateOfHiring, specializationName, dateOfEnrollment,
+                facultyName, type, id);
     }
 }
