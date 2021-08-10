@@ -1,4 +1,4 @@
-package course9;
+package course9_10;
 
 import course5_6hw.Tema1.*;
 
@@ -19,7 +19,7 @@ Have a main method in the HumanService where you:
     private static final HumanRepository<Student> studentRepository = new HumanRepository<>();
     private static final HumanRepository<Professor> professorRepository = new HumanRepository<>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception, ValidationException {
 
         Student s1 = new Student("Marius", "Pop", "24.03.2000",
                 "01.10.2018", "UBB", "Contabilitate", StudentType.PHD, "01");
@@ -47,8 +47,8 @@ Have a main method in the HumanService where you:
 
         System.out.println("Delete by ID");
 
-        studentRepository.deleteById("03");
         studentRepository.deleteById("01");
+     //   studentRepository.deleteById("01");
         System.out.println(studentRepository.getAll());
 
         System.out.println("By name");
