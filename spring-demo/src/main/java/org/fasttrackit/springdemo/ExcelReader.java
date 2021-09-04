@@ -12,8 +12,8 @@ import java.io.IOException;
 import java.util.Iterator;
 
 public class ExcelReader {
-    public static final String SAMPLE_XLSX_FILE_PATH = "C:\\Users\\Ale\\IdeaProjects\\fasttrackit-training-java-won3\\"
-            + "file_example_XLSX_10.xlsx";
+    public static final String SAMPLE_XLSX_FILE_PATH = "C:\\Users\\Ale\\IdeaProjects\\fasttrackit-training-java-won3\\" +
+            "SampleXLSFile_19kb.xls";
 
     public static void main(String[] args) throws IOException, InvalidFormatException {
 

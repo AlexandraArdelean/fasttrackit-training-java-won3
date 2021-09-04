@@ -2,58 +2,56 @@ package org.fasttrackit.course9_10;
 
 import org.fasttrackit.course5_6hw.Tema1.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HumanService {
 
-    /* 3.Create a HumanService class, having 2 HumanRepository fields:
-HumanRepository<Student> studentRepository
-HumanRepository<Professor> professorRepository
-Have a main method in the HumanService where you:
-3.1. Add 4 objects inside each repository
-3.2. Print all to System console
-3.3. Modify 2 objects inside each repository
-3.3. Print all to System console again, to show modified values
-3.4. Delete 2 objects inside each repository (1 that was modified, 1 that wasn’t)
-3.5. Print all to System console again
-3.6. Print a single element from each repository, retrieved by its name field (show getAllByName works)*/
+    private final HumanRepository<Student> studentRepository;
+    private final HumanRepository<Professor> professorRepository;
 
-    private static final HumanRepository<Student> studentRepository = new HumanRepository<>();
-    private static final HumanRepository<Professor> professorRepository = new HumanRepository<>();
+    public HumanService(HumanRepository<Student> studentRepository, HumanRepository<Professor> professorRepository) {
+        this.studentRepository = studentRepository;
+        this.professorRepository = professorRepository;
+    }
 
-    public static void main(String[] args) {
-
+    public List<Human> getAllHumans() {
+        HumanRepository<Student> studentHumanRepository = new HumanRepository<>();
+        HumanRepository<Professor> professorHumanRepository = new HumanRepository<>();
+        List<Human> allHumans = new ArrayList<>();
+        allHumans.addAll(studentHumanRepository.getAll());
+        allHumans.addAll(professorHumanRepository.getAll());
         Student s1 = new Student("Marius", "Pop", "24.03.2000",
                 "01.10.2018", "UBB", "Contabilitate", StudentType.PHD, "01");
+
         Student s2 = new Student("Marius", "Bojor", "12.08.1991",
                 "01.10.2010", "UTCN", "Info", StudentType.BACHELOR, "02");
-        Student s3 = new Student("Andrei", "Ardelean", "04.09.1994",
-                "01.10.2013", "UBB0", "Info", StudentType.PHD, "03");
-        Student s4 = new Student("Adelina", "Dragos", "01.03.1990",
-                "01.10.2009", "UMF", "Medicina", StudentType.PHD, "04");
 
-        studentRepository.add(s1);
-        studentRepository.add(s2);
-        studentRepository.add(s3);
-        studentRepository.add(s4);
+//        Student s3 = new Student("Andrei", "Ardelean", "04.09.1994",
+//                "01.10.2013", "UBB0", "Info", StudentType.PHD, "03");
+//        Student s4 = new Student("Adelina", "Dragos", "01.03.1990",
+//                "01.10.2009", "UMF", "Medicina", StudentType.PHD, "04");
+
+        exercise1();
 
         System.out.println("before update");
-        System.out.println(studentRepository.getAll());
+        exercise2();
 
         System.out.println("after update");
 
-        studentRepository.updateById("01", s4);
-        studentRepository.updateById("03", s2);
+        exercise3("02", s1);
         System.out.println(studentRepository.getAll());
 
 
         System.out.println("Delete by ID");
 
-        studentRepository.deleteById("01");
-     //   studentRepository.deleteById("01");
+        exercise4();
         System.out.println(studentRepository.getAll());
 
         System.out.println("By name");
 
-        studentRepository.getAllByName("Marius");
+
+        exercise5();
         System.out.println(studentRepository.getAll());
 
 
@@ -94,7 +92,35 @@ Have a main method in the HumanService where you:
         professorRepository.getAllByName("Ana");
         System.out.println(professorRepository.getAll());
 
+        return allHumans;
+    }
+
+
+
+    public void exercise5(String name) {
+
+        studentRepository.getAllByName(name);
+    }
+
+    public void exercise4(String id) {
+        studentRepository.deleteById(id);
+
+    }
+
+    public void exercise3(String id, Student s) {
+
+        studentRepository.updateById(id, s);
+    }
+
+    public void exercise2() {
+        System.out.println(studentRepository.getAll());
+    }
+
+    public void exercise1(Student s) {
+
+        studentRepository.add(s);
 
     }
 }
+
 
