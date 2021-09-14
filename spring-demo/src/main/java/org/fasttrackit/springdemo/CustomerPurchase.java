@@ -3,6 +3,7 @@ package org.fasttrackit.springdemo;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class CustomerPurchase {
+
 
     private int id;
     private String purchasedProduct;
@@ -86,11 +88,12 @@ public class CustomerPurchase {
 
             return null;
         }
+
         // Read the excel sheet contents and get the contents in
         // a list
-        public List<CustomerPurchase> readFromExcelFile(String excelFilePath)throws IOException {
+        public List<CustomerPurchase> readFromExcelFile(String excelFilePath) throws IOException {
 
-            List<CustomerPurchase> customerList= new ArrayList<>();
+            List<CustomerPurchase> customerList = new ArrayList<>();
             FileInputStream inputStream = new FileInputStream(new File(excelFilePath));
 
             Workbook workbook = new HSSFWorkbook(inputStream);
@@ -123,16 +126,20 @@ public class CustomerPurchase {
                             customerPurchase.setCategory(
                                     (nextCell.getStringCellValue()));
                     }
+
+                    customerList.add(customerPurchase);
                 }
-                customerList.add(customerPurchase);
+
+
+                inputStream.close();
+
+
             }
-
-
-            inputStream.close();
-
             return customerList;
         }
+
     }
-    }
+
+}
 
 
