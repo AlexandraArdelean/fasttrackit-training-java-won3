@@ -2,12 +2,12 @@ package org.fasttrackittrainingjavawon3.springuniversityapp.repository.dao;
 
 import javax.persistence.*;
 
-@Entity
 @Table(name = "humans")
+@Embeddable
 public class HumanEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id; //possibly no longer needed?
     @Column
     private String lastname;
     @Column
@@ -16,13 +16,6 @@ public class HumanEntity {
     private String cnp;
 
     public HumanEntity() {
-    }
-
-    public HumanEntity(Long id, String lastname, String firstname, String cnp) {
-        this.id = id;
-        this.lastname = lastname;
-        this.firstname = firstname;
-        this.cnp = cnp;
     }
 
     public HumanEntity(String lastname, String firstname, String cnp) {
@@ -62,4 +55,7 @@ public class HumanEntity {
     public void setCnp(String cnp) {
         this.cnp = cnp;
     }
+
+
 }
+
