@@ -1,6 +1,8 @@
 package org.fasttrackittrainingjavawon3.springuniversityapp.controller;
 
 import org.fasttrackittrainingjavawon3.springuniversityapp.service.SchedulesService;
+import org.fasttrackittrainingjavawon3.springuniversityapp.service.model.AssignmentsDto;
+import org.fasttrackittrainingjavawon3.springuniversityapp.service.model.AssignmentsResponseDto;
 import org.fasttrackittrainingjavawon3.springuniversityapp.service.model.SchedulesDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -47,4 +49,12 @@ public class SchedulesController {
     public void deleteSchedule (@PathVariable(name = "id") Long idToDelete){
         this.service.deleteById(idToDelete);
     }
+
+    @PutMapping("/api/schedules/assignStudents")
+    public ResponseEntity<AssignmentsResponseDto> assignStudents (@RequestBody AssignmentsDto assignmentsDto){
+        System.out.println(assignmentsDto);
+        return ResponseEntity.ok(new AssignmentsResponseDto() );
+
+    }
+
 }

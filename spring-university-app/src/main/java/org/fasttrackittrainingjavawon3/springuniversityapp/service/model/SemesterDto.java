@@ -13,6 +13,7 @@ public class SemesterDto {
     private String ending;
 
 
+
     private List<CourseDto> courses;
 
     public List<CourseDto> getCourses() {

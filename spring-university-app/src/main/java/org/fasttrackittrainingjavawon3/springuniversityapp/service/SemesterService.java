@@ -2,6 +2,7 @@ package org.fasttrackittrainingjavawon3.springuniversityapp.service;
 
 import org.fasttrackittrainingjavawon3.springuniversityapp.repository.SemesterRepository;
 import org.fasttrackittrainingjavawon3.springuniversityapp.repository.dao.CoursesEntity;
+import org.fasttrackittrainingjavawon3.springuniversityapp.repository.dao.ScheduledCoursesEntity;
 import org.fasttrackittrainingjavawon3.springuniversityapp.repository.dao.SemesterEntity;
 import org.fasttrackittrainingjavawon3.springuniversityapp.service.model.CourseDto;
 import org.fasttrackittrainingjavawon3.springuniversityapp.service.model.SemesterDto;
@@ -21,7 +22,7 @@ public class SemesterService {
     }
 
 
-   //  method to map Semester Entity to DTO
+    //  method to map Semester Entity to DTO
     private SemesterDto mapSemesterEntityToDto(SemesterEntity entity) {
         SemesterDto newSemester = new SemesterDto();
         newSemester.setId(entity.getId());
@@ -35,6 +36,7 @@ public class SemesterService {
 
     }
 
+
     //method to add a semester
     public void addSemester(SemesterDto toAdd) {
         SemesterEntity semesterEntity = new SemesterEntity();
@@ -44,6 +46,13 @@ public class SemesterService {
         semesterEntity.setYear(toAdd.getYear());
         semesterEntity.setStarting(toAdd.getStarting());
         semesterEntity.setEnding(toAdd.getEnding());
+
+        semesterEntity.setCourses(toAdd.getCourses().stream().map(courseDto -> {
+            ScheduledCoursesEntity entity = new ScheduledCoursesEntity();
+            entity.setSemester(semesterEntity);
+            entity.setCourse(new CoursesEntity(courseDto.getNum(), courseDto.getTitle()));
+            return entity;
+        }).collect(Collectors.toSet()));
         this.semesterRepository.save(semesterEntity);
     }
     // method to get all semesters

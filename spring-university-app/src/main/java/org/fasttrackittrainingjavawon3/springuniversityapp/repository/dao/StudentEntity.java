@@ -3,6 +3,7 @@ package org.fasttrackittrainingjavawon3.springuniversityapp.repository.dao;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 @Entity
@@ -19,20 +20,13 @@ public class StudentEntity extends Human {
     private String cnp;
 
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "student_courses",
-            joinColumns = {
-                    @JoinColumn(name = "student_id")},
-            inverseJoinColumns = {@JoinColumn(name = "scheduled_course_id")})
-    private List<SchedulesEntity> schedules = new ArrayList<>();
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumns({
+            @JoinColumn(name = "semesterId", insertable = false, updatable = false),
+            @JoinColumn(name = "courseId", insertable = false, updatable = false)
+    })
+    private ScheduledCoursesEntity schedule;
 
-    public List<SchedulesEntity> getSchedules() {
-        return schedules;
-    }
-
-    public void setSchedules(List<SchedulesEntity> schedules) {
-        this.schedules = schedules;
-    }
 
     public StudentEntity() {
     }
@@ -77,9 +71,39 @@ public class StudentEntity extends Human {
         this.cnp = cnp;
     }
 
+    public ScheduledCoursesEntity getSchedule() {
+        return schedule;
+    }
 
+    public void setSchedule(ScheduledCoursesEntity schedule) {
+        this.schedule = schedule;
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        StudentEntity that = (StudentEntity) o;
+        return Objects.equals(id, that.id) && Objects.equals(firstname, that.firstname)
+                && Objects.equals(lastname, that.lastname)
+                && Objects.equals(cnp, that.cnp) && Objects.equals(schedule, that.schedule);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstname, lastname, cnp, schedule);
+    }
+
+    @Override
+    public String toString() {
+        return "StudentEntity{" +
+                "id=" + id +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", cnp='" + cnp + '\'' +
+                ", schedule=" + schedule +
+                '}';
+    }
 }
 
 

@@ -4,7 +4,9 @@ import org.fasttrackittrainingjavawon3.springuniversityapp.repository.CourseRepo
 import org.fasttrackittrainingjavawon3.springuniversityapp.repository.ProfessorRepository;
 import org.fasttrackittrainingjavawon3.springuniversityapp.repository.SchedulesRepository;
 import org.fasttrackittrainingjavawon3.springuniversityapp.repository.SemesterRepository;
-import org.fasttrackittrainingjavawon3.springuniversityapp.repository.dao.SchedulesEntity;
+import org.fasttrackittrainingjavawon3.springuniversityapp.repository.dao.ScheduledCoursesEntity;
+import org.fasttrackittrainingjavawon3.springuniversityapp.service.model.AssignmentsDto;
+import org.fasttrackittrainingjavawon3.springuniversityapp.service.model.AssignmentsResponseDto;
 import org.fasttrackittrainingjavawon3.springuniversityapp.service.model.SchedulesDto;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -33,9 +35,9 @@ public class SchedulesService {
         this.professorRepository = professorRepository;
     }
 
-    private SchedulesDto mapEntityToScheduleDto (SchedulesEntity schedulesEntity){
+    private SchedulesDto mapEntityToScheduleDto (ScheduledCoursesEntity schedulesEntity){
         SchedulesDto response= new SchedulesDto();
-        response.setId(schedulesEntity.getId());
+//        response.setId(schedulesEntity.getId());
         response.setCourseId(schedulesEntity.getCourse().getId());
         response.setSemesterId(schedulesEntity.getSemester().getId());
         response.setProfessorId(schedulesEntity.getProfessor().getId());
@@ -43,8 +45,8 @@ public class SchedulesService {
     }
 
     public SchedulesDto createNewSchedule (SchedulesDto request ){
-        SchedulesEntity newSchedule = new SchedulesEntity();
-        Optional<SchedulesEntity> optionalSchedule = repository.findScheduleByCourseAndSemester(request.getCourseId(),
+        ScheduledCoursesEntity newSchedule = new ScheduledCoursesEntity();
+        Optional<ScheduledCoursesEntity> optionalSchedule = repository.findScheduleByCourseAndSemester(request.getCourseId(),
                 request.getSemesterId());
         if (optionalSchedule.isPresent()){
             newSchedule= optionalSchedule.get();
@@ -53,18 +55,18 @@ public class SchedulesService {
             newSchedule.setSemester(semesterRepository.findById(request.getSemesterId()).get());
         }
         newSchedule.setProfessor(professorRepository.findById(request.getProfessorId()).get());
-        SchedulesEntity saveEntity=this.repository.save(newSchedule);
+        ScheduledCoursesEntity saveEntity=this.repository.save(newSchedule);
         return mapEntityToScheduleDto(saveEntity);
     }
 
     public SchedulesDto updateSchedule(SchedulesDto requestDto){
-        SchedulesEntity entityUpdate=new SchedulesEntity();
-        entityUpdate.setId(requestDto.getId());
+        ScheduledCoursesEntity entityUpdate=new ScheduledCoursesEntity();
+//        entityUpdate.setId(requestDto.getId());
         entityUpdate.setCourse(courseRepository.findById(requestDto.getCourseId()).get());
         entityUpdate.setSemester(semesterRepository.findById(requestDto.getSemesterId()).get());
         entityUpdate.setProfessor(professorRepository.findById(requestDto.getProfessorId()).get());
 
-        SchedulesEntity updatedSchedule = this.repository.save(entityUpdate);
+        ScheduledCoursesEntity updatedSchedule = this.repository.save(entityUpdate);
         return mapEntityToScheduleDto(updatedSchedule);
     }
 
@@ -83,5 +85,11 @@ public class SchedulesService {
 
     public void deleteById(Long id){
         this.repository.deleteById(id);
+    }
+
+    public AssignmentsResponseDto assignStudentsToCourses (AssignmentsDto assignmentsDto) {
+        // cauta semestru dupa department, year si number
+        // pt fiecare scheduled course adauga lista de studenti
+        //
     }
 }

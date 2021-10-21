@@ -5,6 +5,8 @@ import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 
 
 @Entity
@@ -23,6 +25,10 @@ public class SemesterEntity {
     private String starting;
     @Column
     private String ending;
+
+    @OneToMany(mappedBy = "course")
+    private Set<ScheduledCoursesEntity> courses;
+
 
     public SemesterEntity() {
     }
@@ -76,4 +82,37 @@ public class SemesterEntity {
         this.ending = ending;
     }
 
+    public Set<ScheduledCoursesEntity> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(Set<ScheduledCoursesEntity> courses) {
+        this.courses = courses;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SemesterEntity that = (SemesterEntity) o;
+        return Objects.equals(id, that.id) && Objects.equals(department, that.department) && Objects.equals(year, that.year) && Objects.equals(semester, that.semester) && Objects.equals(starting, that.starting) && Objects.equals(ending, that.ending) && Objects.equals(courses, that.courses);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, department, year, semester, starting, ending, courses);
+    }
+
+    @Override
+    public String toString() {
+        return "SemesterEntity{" +
+                "id=" + id +
+                ", department='" + department + '\'' +
+                ", year='" + year + '\'' +
+                ", semester=" + semester +
+                ", starting='" + starting + '\'' +
+                ", ending='" + ending + '\'' +
+                ", courses=" + courses +
+                '}';
+    }
 }
