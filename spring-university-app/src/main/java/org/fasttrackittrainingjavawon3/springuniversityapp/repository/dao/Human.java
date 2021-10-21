@@ -2,27 +2,14 @@ package org.fasttrackittrainingjavawon3.springuniversityapp.repository.dao;
 
 import javax.persistence.*;
 
-@Table(name = "humans")
-@Embeddable
-public class HumanEntity {
+@MappedSuperclass
+public abstract class Human {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; //possibly no longer needed?
-    @Column
+    private Long id;
     private String lastname;
-    @Column
     private String firstname;
-    @Column
     private String cnp;
-
-    public HumanEntity() {
-    }
-
-    public HumanEntity(String lastname, String firstname, String cnp) {
-        this.lastname = lastname;
-        this.firstname = firstname;
-        this.cnp = cnp;
-    }
 
     public Long getId() {
         return id;

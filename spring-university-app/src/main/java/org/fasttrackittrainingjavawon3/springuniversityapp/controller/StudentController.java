@@ -1,6 +1,5 @@
 package org.fasttrackittrainingjavawon3.springuniversityapp.controller;
 
-import org.fasttrackittrainingjavawon3.springuniversityapp.repository.dao.StudentEntity;
 import org.fasttrackittrainingjavawon3.springuniversityapp.service.StudentService;
 import org.fasttrackittrainingjavawon3.springuniversityapp.service.model.StudentDto;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +17,6 @@ public class StudentController {
     }
 
     // GET to return all students
-
     @GetMapping("/api/students")
     public ResponseEntity<List<StudentDto>> getAllStudents() {
         return ResponseEntity.ok(studentService.getAllStudents());
@@ -26,7 +24,6 @@ public class StudentController {
 
 
     //GET by ID to retrieve a single student by an ID given as a Request Parameter
-
     @GetMapping("/api/students/{id}")
     public ResponseEntity getById(@RequestParam(value = "id", required = false) Long id) {
 
@@ -35,7 +32,6 @@ public class StudentController {
     }
 
     //POST to create or update a new student by ID
-
     @PostMapping("/api/students")
     public ResponseEntity createOrUpdateStudent(@RequestBody StudentDto studentRequest) {
         this.studentService.createOrUpdateStudent(studentRequest);
@@ -47,5 +43,6 @@ public class StudentController {
     public void deleteStudentById(@PathVariable(value = "id") Long id) {
         this.studentService.deleteStudentById(id);
     }
+
 
 }

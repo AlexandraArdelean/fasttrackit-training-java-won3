@@ -18,7 +18,20 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.4'
 	implementation 'org.springframework.data:spring-data-jpa:2.5.4'
 	implementation 'org.postgresql:postgresql:42.2.23'
+
+
+	implementation 'io.springfox:springfox-swagger2:3.0.0'
+	implementation 'io.springfox:springfox-boot-starter:3.0.0'
+	implementation 'io.springfox:springfox-spring-web:3.0.0'
+
+	implementation 'org.springframework.boot:spring-boot-starter-actuator:2.2.2.RELEASE'
+	implementation group: 'org.springframework.amqp', name: 'spring-rabbit', version: '2.3.4'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.1'
+
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.4'
+	testImplementation 'org.mockito:mockito-core:2.28.2'
+	testImplementation 'org.mockito:mockito-junit-jupiter:2.28.2'
 }
 
 test {
