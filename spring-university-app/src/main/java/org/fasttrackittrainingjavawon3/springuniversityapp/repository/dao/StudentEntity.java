@@ -19,20 +19,20 @@ public class StudentEntity extends Human {
     private String cnp;
 
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "student_courses",
-            joinColumns = {
-                    @JoinColumn(name = "student_id")},
-            inverseJoinColumns = {@JoinColumn(name = "scheduled_course_id")})
-    private List<SchedulesEntity> schedules = new ArrayList<>();
-
-    public List<SchedulesEntity> getSchedules() {
-        return schedules;
-    }
-
-    public void setSchedules(List<SchedulesEntity> schedules) {
-        this.schedules = schedules;
-    }
+//    @ManyToMany(cascade = CascadeType.ALL)
+//    @JoinTable(name = "student_courses",
+//            joinColumns = {
+//                    @JoinColumn(name = "student_id")},
+//            inverseJoinColumns = {@JoinColumn(name = "scheduled_course_id")})
+//    private List<SchedulesEntity> schedules = new ArrayList<>();
+//
+//    public List<SchedulesEntity> getSchedules() {
+//        return schedules;
+//    }
+//
+//    public void setSchedules(List<SchedulesEntity> schedules) {
+//        this.schedules = schedules;
+//    }
 
     public StudentEntity() {
     }

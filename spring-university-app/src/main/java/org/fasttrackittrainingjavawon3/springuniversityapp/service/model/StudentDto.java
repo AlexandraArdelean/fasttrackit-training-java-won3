@@ -1,10 +1,27 @@
 package org.fasttrackittrainingjavawon3.springuniversityapp.service.model;
 
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class StudentDto extends HumanDto {
 
+    public StudentDto() {
+    }
 
+//    public List<SchedulesDto> scheduledCourses = new ArrayList<>();
+//
+//    public <R> StudentDto(Long id, String firstname, String lastname, String cnp, R collect) {
+//        super();
+//    }
+//
+//    public List<SchedulesDto> getScheduledCourses() {
+//        return scheduledCourses;
+//    }
+//
+//    public void setScheduledCourses(List<SchedulesDto> scheduledCourses) {
+//        this.scheduledCourses = scheduledCourses;
+//    }
 
     @Override
     public Long getId() {

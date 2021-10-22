@@ -6,6 +6,9 @@ public class SchedulesDto {
     private Long semesterId;
     private Long professorId;
 
+    public SchedulesDto() {
+    }
+
     public Long getId() {
         return id;
     }

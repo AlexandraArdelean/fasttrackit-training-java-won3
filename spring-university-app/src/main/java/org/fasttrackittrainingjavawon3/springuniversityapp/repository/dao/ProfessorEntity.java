@@ -17,26 +17,10 @@ public class ProfessorEntity extends Human {
     private String lastname;
     @Column
     private String cnp;
-//
-//    @OneToMany (cascade = CascadeType.ALL)
-//    private List<EnrolmentEntity> schedules;
-//
-//    public List<EnrolmentEntity> getSchedules() {
-//        return schedules;
-//    }
-//
-//    public void setSchedules(List<EnrolmentEntity> schedules) {
-//        this.schedules = schedules;
-//    }
 
     public ProfessorEntity() {
     }
 
-    public ProfessorEntity(String firstname, String lastname, String cnp) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.cnp = cnp;
-    }
 
     @Override
     public Long getId() {
@@ -76,5 +60,15 @@ public class ProfessorEntity extends Human {
     @Override
     public void setCnp(String cnp) {
         this.cnp = cnp;
+    }
+
+    @Override
+    public String toString() {
+        return "ProfessorEntity{" +
+                "id=" + id +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", cnp='" + cnp + '\'' +
+                '}';
     }
 }

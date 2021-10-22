@@ -1,6 +1,7 @@
 package org.fasttrackittrainingjavawon3.springuniversityapp.repository.dao;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "scheduled_courses")
 public class SchedulesEntity {
@@ -15,6 +16,11 @@ public class SchedulesEntity {
     @ManyToOne
     private ProfessorEntity professor;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<AssignmentsEntity> assignments;
+
+    public SchedulesEntity() {
+    }
 
     public Long getId() {
         return id;
@@ -46,5 +52,24 @@ public class SchedulesEntity {
 
     public void setProfessor(ProfessorEntity professor) {
         this.professor = professor;
+    }
+
+    public List<AssignmentsEntity> getAssignments() {
+        return assignments;
+    }
+
+    public void setAssignments(List<AssignmentsEntity> assignments) {
+        this.assignments = assignments;
+    }
+
+    @Override
+    public String toString() {
+        return "SchedulesEntity{" +
+                "id=" + id +
+                ", course=" + course +
+                ", semester=" + semester +
+                ", professor=" + professor +
+                ", assignments=" + assignments +
+                '}';
     }
 }

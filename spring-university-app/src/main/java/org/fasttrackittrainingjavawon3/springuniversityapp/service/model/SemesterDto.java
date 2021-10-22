@@ -12,16 +12,16 @@ public class SemesterDto {
     private String starting;
     private String ending;
 
-
-    private List<CourseDto> courses;
-
-    public List<CourseDto> getCourses() {
-        return courses;
-    }
-
-    public void setCourses(List<CourseDto> courses) {
-        this.courses = courses;
-    }
+//
+//    private List<CourseDto> courses;
+//
+//    public List<CourseDto> getCourses() {
+//        return courses;
+//    }
+//
+//    public void setCourses(List<CourseDto> courses) {
+//        this.courses = courses;
+//    }
 
     public Long getId() {
         return id;

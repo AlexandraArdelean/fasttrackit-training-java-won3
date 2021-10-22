@@ -2,6 +2,7 @@ package org.fasttrackittrainingjavawon3.springuniversityapp.controller;
 
 import org.fasttrackittrainingjavawon3.springuniversityapp.service.StudentService;
 import org.fasttrackittrainingjavawon3.springuniversityapp.service.model.StudentDto;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -44,5 +45,15 @@ public class StudentController {
         this.studentService.deleteStudentById(id);
     }
 
+    @PutMapping("/students/courses")
+    public ResponseEntity<List<StudentDto>> updateSchedule (@RequestBody List<StudentDto> request){
+        if(request.isEmpty()) {
+            return ResponseEntity
+                    .status(HttpStatus.BAD_REQUEST)
+                    .body(request);
+        }
+        return ResponseEntity.ok().build();
 
-}
+        }
+    }
+

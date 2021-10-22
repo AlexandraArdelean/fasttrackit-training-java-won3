@@ -76,4 +76,15 @@ public class SemesterEntity {
         this.ending = ending;
     }
 
+    @Override
+    public String toString() {
+        return "SemesterEntity{" +
+                "id=" + id +
+                ", department='" + department + '\'' +
+                ", year='" + year + '\'' +
+                ", semester=" + semester +
+                ", starting='" + starting + '\'' +
+                ", ending='" + ending + '\'' +
+                '}';
+    }
 }

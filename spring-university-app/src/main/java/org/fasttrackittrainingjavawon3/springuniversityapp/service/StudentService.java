@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 @Service
 public class StudentService {
     private final StudentRepository studentRepository;
+    private final SchedulesRepository schedulesRepository;
     private final ProfessorRepository professorRepository;
     private final SemesterRepository semesterRepository;
     private final CourseRepository courseRepository;
@@ -20,10 +21,12 @@ public class StudentService {
 
 
     public StudentService(StudentRepository studentRepository,
-                          ProfessorRepository professorRepository,
+                          SchedulesRepository schedulesRepository, ProfessorRepository professorRepository,
                           SemesterRepository semesterRepository,
                           CourseRepository courseRepository) {
         this.studentRepository = studentRepository;
+        this.schedulesRepository = schedulesRepository;
+
         this.professorRepository = professorRepository;
         this.semesterRepository = semesterRepository;
         this.courseRepository = courseRepository;
@@ -37,6 +40,7 @@ public class StudentService {
         studentDto.setFirstname(entity.getFirstname());
         studentDto.setLastname(entity.getLastname());
         studentDto.setCnp(entity.getCnp());
+
         return studentDto;
     }
 
@@ -76,19 +80,27 @@ public class StudentService {
     public void deleteStudentById(Long studentIdToDelete) {
         this.studentRepository.deleteById(studentIdToDelete);
     }
-
-//    // post mapping
-//   public List<StudentDto> createStudentsList(AssignedCoursesDto assignedCourses){
-//        CoursesEntity courses = courseRepository.findById(assignedCourses.courseId).get();
-//        ProfessorEntity professor=professorRepository.findById(assignedCourses.professorId).get();
-//        SemesterEntity semester=semesterRepository.findById(assignedCourses.semesterId).get();
 //
-//        ScheduledCoursesEntity scheduledCourses = new ScheduledCoursesEntity(courses, professor, semester);
-//        ScheduledCoursesEntity savedSchedule= scheduledCoursesRepository.save(scheduledCourses);
-//
-//        List<StudentEntity> students= assignedCourses.studentId
+//   // put mapping
+//   public List<StudentDto> createStudentsList(AssignCourseRequest assignedCourseRequest){
+//        CoursesEntity courses = courseRepository.findById(assignedCourseRequest.courseId)
+//                .orElseThrow(()->new RuntimeException("Course not found"));
+//        ProfessorEntity professor=professorRepository.findById(assignedCourseRequest.professorId)
+//                .orElseThrow(()-> new RuntimeException("Course not found"));
+//        List<SemesterEntity> semesters = semesterRepository.findByUniversityDepartmentAndYear(assignedCourseRequest.department,
+//                assignedCourseRequest.year);
+//        SemesterEntity semester= semesters
 //                .stream()
-//                .map(id->studentRepository.findById(id).get())
+//                .findFirst()
+//                .orElseThrow(()->new RuntimeException("Semester not found"));
+//        SchedulesEntity schedules=new SchedulesEntity(courses, semester, professor);
+//        SchedulesEntity scheduledCourses = new SchedulesEntity(courses, semester, professor);
+//
+//        SchedulesEntity savedSchedule= schedulesRepository.save(scheduledCourses);
+//
+//        List<StudentEntity> students= assignedCourseRequest.studentIds
+//                .stream()
+//                .map(id->studentRepository.findById(id).orElseThrow(()->new RuntimeException("Student not found")))
 //                .collect(Collectors.toList());
 //
 //        List<StudentEntity> updatedStudents=new ArrayList<>();
@@ -105,16 +117,11 @@ public class StudentService {
 //                        student.getCnp(),
 //                        student.getSchedules()
 //                                .stream()
-//                                .map(this::mapEntityToDto)
-//                               .collect(Collectors.toList())
-//                )).collect(Collectors.toList());
+//                                .map(s->new SchedulesDto(
+//                                        s.getProfessor().getFirstname(),
+//                                        s.getCourse().getTitle(),
+//                                        s.getSemester().getDepartment()))
+//                                .collect(Collectors.toList()))).collect(Collectors.toList());
 //    }
-//    private ScheduledCoursesDto mapEntityToDto(ScheduledCoursesEntity entity) {
-//        ScheduledCoursesDto dto = new ScheduledCoursesDto();
-//        dto.setFirstname(entity.getProfessor().getFirstname());
-//        dto.setLastname(entity.getProfessor().getLastname());
-//        dto.setNum(entity.getCourses().getNum());
-//        dto.setDepartment(entity.getSemester().getDepartment());
-//        return dto;
-//    }
+
 }
