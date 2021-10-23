@@ -1,9 +1,14 @@
 package org.fasttrackittrainingjavawon3.springuniversityapp.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.fasttrackittrainingjavawon3.springuniversityapp.message.AssignmentsMessageDto;
 import org.fasttrackittrainingjavawon3.springuniversityapp.repository.AssignmentsRepository;
 import org.fasttrackittrainingjavawon3.springuniversityapp.repository.SchedulesRepository;
 import org.fasttrackittrainingjavawon3.springuniversityapp.repository.dao.AssignmentsEntity;
 import org.fasttrackittrainingjavawon3.springuniversityapp.service.model.AssignmentsDto;
+import org.springframework.amqp.core.DirectExchange;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -14,11 +19,17 @@ public class AssignmentsService {
 
     private final AssignmentsRepository repository;
     private final SchedulesRepository schedulesRepository;
+    private final RabbitTemplate rabbitMqTemplate;
+    private final DirectExchange directExchange;
 
     public AssignmentsService(AssignmentsRepository repository,
-                              SchedulesRepository schedulesRepository) {
+                              SchedulesRepository schedulesRepository,
+                              RabbitTemplate rabbitMqTemplate,
+                              DirectExchange directExchange) {
         this.repository = repository;
         this.schedulesRepository = schedulesRepository;
+        this.rabbitMqTemplate = rabbitMqTemplate;
+        this.directExchange = directExchange;
     }
 
     //post
@@ -30,6 +41,22 @@ public class AssignmentsService {
         newAssignment.setSemesterNumber(request.getSemesterNumber());
         newAssignment.setUniversityYear(request.getUniversityYear());
         AssignmentsEntity saveEntity=this.repository.save(newAssignment);
+
+        AssignmentsMessageDto assignmentCreatedMessage= new AssignmentsMessageDto();
+        assignmentCreatedMessage.setSchedulesId(newAssignment.getSchedules().getId());
+        assignmentCreatedMessage.setUniversityDepartment(newAssignment.getUniversityDepartment());
+        assignmentCreatedMessage.setSemesterNumber(newAssignment.getSemesterNumber());
+        assignmentCreatedMessage.setUniversityYear(newAssignment.getUniversityYear());
+        ObjectMapper objectMapper = new ObjectMapper();
+
+
+        try{
+            String stringMessageConverted=objectMapper.writeValueAsString(assignmentCreatedMessage);
+            rabbitMqTemplate.convertAndSend(directExchange.getName(), "assignments", stringMessageConverted);
+
+        }catch (JsonProcessingException e){
+            e.printStackTrace();
+        }
         return mapEntityToAssignmentResponse(saveEntity);
     }
 

@@ -1,4 +1,4 @@
-package org.fasttrackittrainingjavawon3.springuniversityapp.config;
+package org.fasttrackittrainingjavawon3.springuniversityapp.configuration;
 
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.context.annotation.Bean;

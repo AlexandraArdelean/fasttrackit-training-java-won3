@@ -24,8 +24,10 @@ dependencies {
 	implementation 'io.springfox:springfox-boot-starter:3.0.0'
 	implementation 'io.springfox:springfox-spring-web:3.0.0'
 
-	implementation 'org.springframework.boot:spring-boot-starter-actuator:2.2.2.RELEASE'
-	implementation group: 'org.springframework.amqp', name: 'spring-rabbit', version: '2.3.4'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator:2.5.4'
+	implementation 'org.springframework.amqp:spring-amqp:2.3.11'
+	implementation 'org.springframework.amqp:spring-rabbit:2.3.11'
+
 	implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.1'
 
 
