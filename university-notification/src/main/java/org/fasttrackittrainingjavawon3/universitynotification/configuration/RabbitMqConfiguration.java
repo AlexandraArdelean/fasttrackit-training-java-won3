@@ -15,15 +15,16 @@ public class RabbitMqConfiguration {
     }
 
     @Bean
-    public DirectExchange directExchange(){
-        return new DirectExchange("university-rabbit");
+    public DirectExchange direct(){
+        return new DirectExchange("university-app");
     }
 
     @Bean
-    public Binding binding(DirectExchange directExchange, Queue assignmentsQueue){
+    public Binding binding(DirectExchange direct,
+                           Queue assignmentsQueue){
         return BindingBuilder
                 .bind(assignmentsQueue)
-                .to(directExchange)
+                .to(direct)
                 .with("assignments");
     }
 }

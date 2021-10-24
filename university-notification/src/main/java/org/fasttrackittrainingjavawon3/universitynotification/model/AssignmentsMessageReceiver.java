@@ -1,6 +1,6 @@
 package org.fasttrackittrainingjavawon3.universitynotification.model;
 
-public class AssignmentsMessageDto {
+public class AssignmentsMessageReceiver {
 
     private Long schedulesId;
     private String universityDepartment;

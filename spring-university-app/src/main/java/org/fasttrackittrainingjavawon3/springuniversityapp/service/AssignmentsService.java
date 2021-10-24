@@ -32,7 +32,7 @@ public class AssignmentsService {
         this.directExchange = directExchange;
     }
 
-    //post
+    //create a new schedule
 
     public AssignmentsDto createNewAssignment (AssignmentsDto request){
         AssignmentsEntity newAssignment = new AssignmentsEntity();
@@ -56,7 +56,7 @@ public class AssignmentsService {
             rabbitMqTemplate.convertAndSend(directExchange.getName(), "assignments", stringMessageConverted);
 
         }catch (JsonProcessingException e){
-            e.printStackTrace();
+//            e.printStackTrace();
         }
         return mapEntityToAssignmentResponse(saveEntity);
     }
