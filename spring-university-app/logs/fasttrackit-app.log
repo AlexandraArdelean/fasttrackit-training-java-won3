@@ -2286,3 +2286,117 @@ Identify and stop the process that's listening on port 8085 or configure this ap
 19:57:58.380 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool is at sufficient level. <no request,no span> 
 19:58:28.385 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0) <no request,no span> 
 19:58:28.385 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool is at sufficient level. <no request,no span> 
+20:05:01.806 [main] INFO  org.fasttrackittrainingjavawon3.springuniversityapp.SpringUniversityAppApplication - Starting SpringUniversityAppApplication using Java 16.0.1 on DESKTOP-GH0R16B with PID 6768 (D:\spring-university-app\spring-university-app\build\classes\java\main started by Ale in D:\spring-university-app\spring-university-app) <no request,no span> 
+20:05:01.814 [main] INFO  org.fasttrackittrainingjavawon3.springuniversityapp.SpringUniversityAppApplication - No active profile set, falling back to default profiles: default <no request,no span> 
+20:05:04.891 [main] DEBUG com.zaxxer.hikari.HikariConfig - Driver class org.postgresql.Driver found in Thread context class loader jdk.internal.loader.ClassLoaders$AppClassLoader@73d16e93 <no request,no span> 
+20:05:05.481 [main] DEBUG com.zaxxer.hikari.HikariConfig - HikariPool-1 - configuration: <no request,no span> 
+20:05:05.489 [main] DEBUG com.zaxxer.hikari.HikariConfig - allowPoolSuspension................................false <no request,no span> 
+20:05:05.489 [main] DEBUG com.zaxxer.hikari.HikariConfig - autoCommit................................true <no request,no span> 
+20:05:05.489 [main] DEBUG com.zaxxer.hikari.HikariConfig - catalog................................none <no request,no span> 
+20:05:05.489 [main] DEBUG com.zaxxer.hikari.HikariConfig - connectionInitSql................................none <no request,no span> 
+20:05:05.489 [main] DEBUG com.zaxxer.hikari.HikariConfig - connectionTestQuery................................none <no request,no span> 
+20:05:05.489 [main] DEBUG com.zaxxer.hikari.HikariConfig - connectionTimeout................................30000 <no request,no span> 
+20:05:05.489 [main] DEBUG com.zaxxer.hikari.HikariConfig - dataSource................................none <no request,no span> 
+20:05:05.489 [main] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceClassName................................none <no request,no span> 
+20:05:05.489 [main] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceJNDI................................none <no request,no span> 
+20:05:05.489 [main] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceProperties................................{password=<masked>} <no request,no span> 
+20:05:05.489 [main] DEBUG com.zaxxer.hikari.HikariConfig - driverClassName................................"org.postgresql.Driver" <no request,no span> 
+20:05:05.489 [main] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverrideClassName................................none <no request,no span> 
+20:05:05.489 [main] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckProperties................................{} <no request,no span> 
+20:05:05.489 [main] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckRegistry................................none <no request,no span> 
+20:05:05.489 [main] DEBUG com.zaxxer.hikari.HikariConfig - idleTimeout................................600000 <no request,no span> 
+20:05:05.489 [main] DEBUG com.zaxxer.hikari.HikariConfig - initializationFailTimeout................................1 <no request,no span> 
+20:05:05.489 [main] DEBUG com.zaxxer.hikari.HikariConfig - isolateInternalQueries................................false <no request,no span> 
+20:05:05.489 [main] DEBUG com.zaxxer.hikari.HikariConfig - jdbcUrl................................jdbc:postgresql://localhost:5432/university-db <no request,no span> 
+20:05:05.489 [main] DEBUG com.zaxxer.hikari.HikariConfig - keepaliveTime................................0 <no request,no span> 
+20:05:05.489 [main] DEBUG com.zaxxer.hikari.HikariConfig - leakDetectionThreshold................................0 <no request,no span> 
+20:05:05.497 [main] DEBUG com.zaxxer.hikari.HikariConfig - maxLifetime................................1800000 <no request,no span> 
+20:05:05.497 [main] DEBUG com.zaxxer.hikari.HikariConfig - maximumPoolSize................................10 <no request,no span> 
+20:05:05.497 [main] DEBUG com.zaxxer.hikari.HikariConfig - metricRegistry................................none <no request,no span> 
+20:05:05.497 [main] DEBUG com.zaxxer.hikari.HikariConfig - metricsTrackerFactory................................none <no request,no span> 
+20:05:05.497 [main] DEBUG com.zaxxer.hikari.HikariConfig - minimumIdle................................10 <no request,no span> 
+20:05:05.497 [main] DEBUG com.zaxxer.hikari.HikariConfig - password................................<masked> <no request,no span> 
+20:05:05.497 [main] DEBUG com.zaxxer.hikari.HikariConfig - poolName................................"HikariPool-1" <no request,no span> 
+20:05:05.497 [main] DEBUG com.zaxxer.hikari.HikariConfig - readOnly................................false <no request,no span> 
+20:05:05.497 [main] DEBUG com.zaxxer.hikari.HikariConfig - registerMbeans................................false <no request,no span> 
+20:05:05.497 [main] DEBUG com.zaxxer.hikari.HikariConfig - scheduledExecutor................................none <no request,no span> 
+20:05:05.497 [main] DEBUG com.zaxxer.hikari.HikariConfig - schema................................none <no request,no span> 
+20:05:05.497 [main] DEBUG com.zaxxer.hikari.HikariConfig - threadFactory................................internal <no request,no span> 
+20:05:05.497 [main] DEBUG com.zaxxer.hikari.HikariConfig - transactionIsolation................................default <no request,no span> 
+20:05:05.497 [main] DEBUG com.zaxxer.hikari.HikariConfig - username................................"postgres" <no request,no span> 
+20:05:05.497 [main] DEBUG com.zaxxer.hikari.HikariConfig - validationTimeout................................5000 <no request,no span> 
+20:05:05.497 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... <no request,no span> 
+20:05:05.746 [main] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@702b656a <no request,no span> 
+20:05:05.755 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. <no request,no span> 
+20:05:05.862 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=1, active=1, idle=0, waiting=0) <no request,no span> 
+20:05:05.904 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@794feca9 <no request,no span> 
+20:05:05.953 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3c4d7de4 <no request,no span> 
+20:05:05.993 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@b176c70 <no request,no span> 
+20:05:06.033 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5c6282ab <no request,no span> 
+20:05:06.073 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@722091a8 <no request,no span> 
+20:05:06.113 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@20578995 <no request,no span> 
+20:05:06.154 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@10130503 <no request,no span> 
+20:05:06.188 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@582cba70 <no request,no span> 
+20:05:06.229 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2ef7dd0c <no request,no span> 
+20:05:06.229 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=10, active=0, idle=10, waiting=0) <no request,no span> 
+20:05:08.923 [main] INFO  org.fasttrackittrainingjavawon3.springuniversityapp.SpringUniversityAppApplication - Started SpringUniversityAppApplication in 7.652 seconds (JVM running for 8.518) <no request,no span> 
+20:05:35.872 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0) <no request,no span> 
+20:05:35.872 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool is at sufficient level. <no request,no span> 
+20:07:22.038 [main] INFO  org.fasttrackittrainingjavawon3.springuniversityapp.SpringUniversityAppApplication - Starting SpringUniversityAppApplication using Java 16.0.1 on DESKTOP-GH0R16B with PID 2580 (D:\spring-university-app\spring-university-app\build\classes\java\main started by Ale in D:\spring-university-app\spring-university-app) <no request,no span> 
+20:07:22.038 [main] INFO  org.fasttrackittrainingjavawon3.springuniversityapp.SpringUniversityAppApplication - No active profile set, falling back to default profiles: default <no request,no span> 
+20:07:25.104 [main] DEBUG com.zaxxer.hikari.HikariConfig - Driver class org.postgresql.Driver found in Thread context class loader jdk.internal.loader.ClassLoaders$AppClassLoader@73d16e93 <no request,no span> 
+20:07:25.683 [main] DEBUG com.zaxxer.hikari.HikariConfig - HikariPool-1 - configuration: <no request,no span> 
+20:07:25.691 [main] DEBUG com.zaxxer.hikari.HikariConfig - allowPoolSuspension................................false <no request,no span> 
+20:07:25.691 [main] DEBUG com.zaxxer.hikari.HikariConfig - autoCommit................................true <no request,no span> 
+20:07:25.691 [main] DEBUG com.zaxxer.hikari.HikariConfig - catalog................................none <no request,no span> 
+20:07:25.691 [main] DEBUG com.zaxxer.hikari.HikariConfig - connectionInitSql................................none <no request,no span> 
+20:07:25.691 [main] DEBUG com.zaxxer.hikari.HikariConfig - connectionTestQuery................................none <no request,no span> 
+20:07:25.691 [main] DEBUG com.zaxxer.hikari.HikariConfig - connectionTimeout................................30000 <no request,no span> 
+20:07:25.691 [main] DEBUG com.zaxxer.hikari.HikariConfig - dataSource................................none <no request,no span> 
+20:07:25.691 [main] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceClassName................................none <no request,no span> 
+20:07:25.691 [main] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceJNDI................................none <no request,no span> 
+20:07:25.691 [main] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceProperties................................{password=<masked>} <no request,no span> 
+20:07:25.691 [main] DEBUG com.zaxxer.hikari.HikariConfig - driverClassName................................"org.postgresql.Driver" <no request,no span> 
+20:07:25.691 [main] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverrideClassName................................none <no request,no span> 
+20:07:25.691 [main] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckProperties................................{} <no request,no span> 
+20:07:25.691 [main] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckRegistry................................none <no request,no span> 
+20:07:25.691 [main] DEBUG com.zaxxer.hikari.HikariConfig - idleTimeout................................600000 <no request,no span> 
+20:07:25.691 [main] DEBUG com.zaxxer.hikari.HikariConfig - initializationFailTimeout................................1 <no request,no span> 
+20:07:25.691 [main] DEBUG com.zaxxer.hikari.HikariConfig - isolateInternalQueries................................false <no request,no span> 
+20:07:25.691 [main] DEBUG com.zaxxer.hikari.HikariConfig - jdbcUrl................................jdbc:postgresql://localhost:5432/university-db <no request,no span> 
+20:07:25.691 [main] DEBUG com.zaxxer.hikari.HikariConfig - keepaliveTime................................0 <no request,no span> 
+20:07:25.699 [main] DEBUG com.zaxxer.hikari.HikariConfig - leakDetectionThreshold................................0 <no request,no span> 
+20:07:25.699 [main] DEBUG com.zaxxer.hikari.HikariConfig - maxLifetime................................1800000 <no request,no span> 
+20:07:25.699 [main] DEBUG com.zaxxer.hikari.HikariConfig - maximumPoolSize................................10 <no request,no span> 
+20:07:25.699 [main] DEBUG com.zaxxer.hikari.HikariConfig - metricRegistry................................none <no request,no span> 
+20:07:25.699 [main] DEBUG com.zaxxer.hikari.HikariConfig - metricsTrackerFactory................................none <no request,no span> 
+20:07:25.699 [main] DEBUG com.zaxxer.hikari.HikariConfig - minimumIdle................................10 <no request,no span> 
+20:07:25.699 [main] DEBUG com.zaxxer.hikari.HikariConfig - password................................<masked> <no request,no span> 
+20:07:25.699 [main] DEBUG com.zaxxer.hikari.HikariConfig - poolName................................"HikariPool-1" <no request,no span> 
+20:07:25.699 [main] DEBUG com.zaxxer.hikari.HikariConfig - readOnly................................false <no request,no span> 
+20:07:25.699 [main] DEBUG com.zaxxer.hikari.HikariConfig - registerMbeans................................false <no request,no span> 
+20:07:25.699 [main] DEBUG com.zaxxer.hikari.HikariConfig - scheduledExecutor................................none <no request,no span> 
+20:07:25.699 [main] DEBUG com.zaxxer.hikari.HikariConfig - schema................................none <no request,no span> 
+20:07:25.699 [main] DEBUG com.zaxxer.hikari.HikariConfig - threadFactory................................internal <no request,no span> 
+20:07:25.699 [main] DEBUG com.zaxxer.hikari.HikariConfig - transactionIsolation................................default <no request,no span> 
+20:07:25.699 [main] DEBUG com.zaxxer.hikari.HikariConfig - username................................"postgres" <no request,no span> 
+20:07:25.699 [main] DEBUG com.zaxxer.hikari.HikariConfig - validationTimeout................................5000 <no request,no span> 
+20:07:25.699 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... <no request,no span> 
+20:07:26.064 [main] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1ff542a3 <no request,no span> 
+20:07:26.072 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. <no request,no span> 
+20:07:26.176 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=1, active=1, idle=0, waiting=0) <no request,no span> 
+20:07:26.216 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7dadf1cf <no request,no span> 
+20:07:26.256 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@38af701e <no request,no span> 
+20:07:26.296 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1bec33b2 <no request,no span> 
+20:07:26.336 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@58808f51 <no request,no span> 
+20:07:26.385 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1f9d6bb2 <no request,no span> 
+20:07:26.425 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7a63037e <no request,no span> 
+20:07:26.472 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e8de23 <no request,no span> 
+20:07:26.622 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5cce3368 <no request,no span> 
+20:07:26.678 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@28fa03b8 <no request,no span> 
+20:07:26.678 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=10, active=0, idle=10, waiting=0) <no request,no span> 
+20:07:29.488 [main] INFO  org.fasttrackittrainingjavawon3.springuniversityapp.SpringUniversityAppApplication - Started SpringUniversityAppApplication in 7.943 seconds (JVM running for 8.762) <no request,no span> 
+20:07:56.188 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0) <no request,no span> 
+20:07:56.188 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool is at sufficient level. <no request,no span> 
+20:08:26.203 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0) <no request,no span> 
+20:08:26.203 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool is at sufficient level. <no request,no span> 
