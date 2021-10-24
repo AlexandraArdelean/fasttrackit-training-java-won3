@@ -2,7 +2,7 @@ package org.fasttrackittrainingjavawon3.springuniversityapp.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.fasttrackittrainingjavawon3.springuniversityapp.message.AssignmentsMessageDto;
+import org.fasttrackittrainingjavawon3.springuniversityapp.message.AssignmentsMessageDtoSender;
 import org.fasttrackittrainingjavawon3.springuniversityapp.repository.AssignmentsRepository;
 import org.fasttrackittrainingjavawon3.springuniversityapp.repository.SchedulesRepository;
 import org.fasttrackittrainingjavawon3.springuniversityapp.repository.dao.AssignmentsEntity;
@@ -40,9 +40,10 @@ public class AssignmentsService {
         newAssignment.setUniversityDepartment(request.getUniversityDepartment());
         newAssignment.setSemesterNumber(request.getSemesterNumber());
         newAssignment.setUniversityYear(request.getUniversityYear());
+
         AssignmentsEntity saveEntity=this.repository.save(newAssignment);
 
-        AssignmentsMessageDto assignmentCreatedMessage= new AssignmentsMessageDto();
+        AssignmentsMessageDtoSender assignmentCreatedMessage= new AssignmentsMessageDtoSender();
         assignmentCreatedMessage.setSchedulesId(newAssignment.getSchedules().getId());
         assignmentCreatedMessage.setUniversityDepartment(newAssignment.getUniversityDepartment());
         assignmentCreatedMessage.setSemesterNumber(newAssignment.getSemesterNumber());

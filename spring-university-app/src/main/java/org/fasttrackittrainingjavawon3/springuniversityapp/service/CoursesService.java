@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-//
+
 @Service
 public class CoursesService {
 
@@ -25,30 +25,30 @@ public class CoursesService {
     private CourseDto mapCourseEntityToDto(CoursesEntity entity) {
         CourseDto course = new CourseDto();
        course.setId(entity.getId());
-       course.setTitle(entity.getTitle());
        course.setNum(entity.getNum());
+       course.setTitle(entity.getTitle());
        return course;
 
     }
 
-    // post mapping
+    // create new course
     public void addCourses(CourseDto toAdd){
         CoursesEntity entity=new CoursesEntity();
-        toAdd.setId(entity.getId());
-        toAdd.setTitle(entity.getTitle());
-        toAdd.setNum(entity.getNum());
+        entity.setId(toAdd.getId());
+        entity.setNum(toAdd.getNum());
+        entity.setTitle(toAdd.getTitle());
         this.courseRepository.save(entity);
     }
 
 
-    // get mapping
+    // return all courses
     public List<CourseDto> getAllCourses() {
         return courseRepository.findAll()
                 .stream()
                 .map(this::mapCourseEntityToDto)
                 .collect(Collectors.toList());
     }
-      // get by id
+      // return a course by id
 
         public CourseDto returnById(Long id){
             Optional<CoursesEntity> found= courseRepository.findById(id);

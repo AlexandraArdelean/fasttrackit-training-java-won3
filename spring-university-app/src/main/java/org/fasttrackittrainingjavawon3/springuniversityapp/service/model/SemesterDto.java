@@ -1,8 +1,5 @@
 package org.fasttrackittrainingjavawon3.springuniversityapp.service.model;
 
-import java.util.List;
-import java.util.Objects;
-
 public class SemesterDto {
 
     private Long id;
@@ -12,16 +9,6 @@ public class SemesterDto {
     private String starting;
     private String ending;
 
-//
-//    private List<CourseDto> courses;
-//
-//    public List<CourseDto> getCourses() {
-//        return courses;
-//    }
-//
-//    public void setCourses(List<CourseDto> courses) {
-//        this.courses = courses;
-//    }
 
     public Long getId() {
         return id;

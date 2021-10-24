@@ -41,12 +41,5 @@ public class CoursesEntity {
         this.title = title;
     }
 
-    @Override
-    public String toString() {
-        return "CoursesEntity{" +
-                "id=" + id +
-                ", num='" + num + '\'' +
-                ", title='" + title + '\'' +
-                '}';
-    }
+
 }

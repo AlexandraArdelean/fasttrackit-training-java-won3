@@ -1,8 +1,7 @@
-package org.fasttrackittrainingjavawon3.springuniversityapp.message;
-
-import java.util.Date;
+package org.fasttrackittrainingjavawon3.universitynotification.model;
 
 public class AssignmentsMessageDto {
+
     private Long schedulesId;
     private String universityDepartment;
     private String universityYear;

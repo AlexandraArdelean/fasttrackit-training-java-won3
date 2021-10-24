@@ -27,6 +27,7 @@ public class AssignmentsEntity {
         this.id = id;
     }
 
+
     public String getUniversityDepartment() {
         return universityDepartment;
     }
@@ -59,14 +60,5 @@ public class AssignmentsEntity {
         this.schedules = schedules;
     }
 
-    @Override
-    public String toString() {
-        return "AssignmentsEntity{" +
-                "id=" + id +
-                ", universityDepartment='" + universityDepartment + '\'' +
-                ", universityYear='" + universityYear + '\'' +
-                ", semesterNumber='" + semesterNumber + '\'' +
-                ", schedules=" + schedules +
-                '}';
-    }
+
 }

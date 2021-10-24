@@ -5,9 +5,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class RabbitMqConfig {
+public class  RabbitMqConfig {
     @Bean
     public DirectExchange directExchange(){
-        return new DirectExchange("universityapp");
+        return new DirectExchange("university-app");
     }
 }

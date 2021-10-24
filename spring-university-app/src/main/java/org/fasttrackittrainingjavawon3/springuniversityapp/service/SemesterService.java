@@ -1,9 +1,7 @@
 package org.fasttrackittrainingjavawon3.springuniversityapp.service;
 
 import org.fasttrackittrainingjavawon3.springuniversityapp.repository.SemesterRepository;
-import org.fasttrackittrainingjavawon3.springuniversityapp.repository.dao.CoursesEntity;
 import org.fasttrackittrainingjavawon3.springuniversityapp.repository.dao.SemesterEntity;
-import org.fasttrackittrainingjavawon3.springuniversityapp.service.model.CourseDto;
 import org.fasttrackittrainingjavawon3.springuniversityapp.service.model.SemesterDto;
 import org.springframework.stereotype.Service;
 

@@ -80,48 +80,6 @@ public class StudentService {
     public void deleteStudentById(Long studentIdToDelete) {
         this.studentRepository.deleteById(studentIdToDelete);
     }
-//
-//   // put mapping
-//   public List<StudentDto> createStudentsList(AssignCourseRequest assignedCourseRequest){
-//        CoursesEntity courses = courseRepository.findById(assignedCourseRequest.courseId)
-//                .orElseThrow(()->new RuntimeException("Course not found"));
-//        ProfessorEntity professor=professorRepository.findById(assignedCourseRequest.professorId)
-//                .orElseThrow(()-> new RuntimeException("Course not found"));
-//        List<SemesterEntity> semesters = semesterRepository.findByUniversityDepartmentAndYear(assignedCourseRequest.department,
-//                assignedCourseRequest.year);
-//        SemesterEntity semester= semesters
-//                .stream()
-//                .findFirst()
-//                .orElseThrow(()->new RuntimeException("Semester not found"));
-//        SchedulesEntity schedules=new SchedulesEntity(courses, semester, professor);
-//        SchedulesEntity scheduledCourses = new SchedulesEntity(courses, semester, professor);
-//
-//        SchedulesEntity savedSchedule= schedulesRepository.save(scheduledCourses);
-//
-//        List<StudentEntity> students= assignedCourseRequest.studentIds
-//                .stream()
-//                .map(id->studentRepository.findById(id).orElseThrow(()->new RuntimeException("Student not found")))
-//                .collect(Collectors.toList());
-//
-//        List<StudentEntity> updatedStudents=new ArrayList<>();
-//        for (StudentEntity studentEntity:students){
-//            studentEntity.getSchedules().add(savedSchedule);
-//            updatedStudents.add(studentRepository.save(studentEntity));
-//        }
-//        return updatedStudents
-//                .stream()
-//                .map(student->new StudentDto(
-//                        student.getId(),
-//                        student.getFirstname(),
-//                        student.getLastname(),
-//                        student.getCnp(),
-//                        student.getSchedules()
-//                                .stream()
-//                                .map(s->new SchedulesDto(
-//                                        s.getProfessor().getFirstname(),
-//                                        s.getCourse().getTitle(),
-//                                        s.getSemester().getDepartment()))
-//                                .collect(Collectors.toList()))).collect(Collectors.toList());
-//    }
+
 
 }
