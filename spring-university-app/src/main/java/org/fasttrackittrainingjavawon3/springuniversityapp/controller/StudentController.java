@@ -40,20 +40,11 @@ public class StudentController {
     }
 
     //DELETE to delete a student by ID
-    @DeleteMapping("/api/students")
-    public void deleteStudentById(@PathVariable(value = "id") Long id) {
-        this.studentService.deleteStudentById(id);
+    @DeleteMapping("/api/students/{id}")
+    public void deleteStudentById(@RequestParam(value = "id", required = false) Long idToDelete) {
+        this.studentService.deleteStudentById(idToDelete);
     }
 
-    @PutMapping("/students/courses")
-    public ResponseEntity<List<StudentDto>> updateSchedule (@RequestBody List<StudentDto> request){
-        if(request.isEmpty()) {
-            return ResponseEntity
-                    .status(HttpStatus.BAD_REQUEST)
-                    .body(request);
-        }
-        return ResponseEntity.ok().build();
 
-        }
     }
 

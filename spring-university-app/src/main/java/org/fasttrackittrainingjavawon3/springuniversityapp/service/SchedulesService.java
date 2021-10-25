@@ -15,8 +15,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class SchedulesService {
-    @Value("${server.port}")
-    private String serverPort;
+
 
     private final SchedulesRepository repository;
     private final CourseRepository courseRepository;
