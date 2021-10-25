@@ -21,7 +21,7 @@ public class CoursesController {
         return ResponseEntity.ok(coursesService.getAllCourses());
     }
 
-    //POST to create a course by ID
+    //POST to create a course
 
     @PostMapping("/api/courses")
     public ResponseEntity <CourseDto> createCourse(@RequestBody CourseDto courseDto) {
@@ -29,9 +29,18 @@ public class CoursesController {
         return ResponseEntity.ok().build();
     }
 
+
+    // get by id as a request param
+    @GetMapping(path = "api/courses/{id}")
+    public void getById(@RequestParam(value = "id", required = false) Long id){
+        this.coursesService.returnById(id);
+
+
+
+    }
     //DELETE to delete a course by ID
-    @DeleteMapping("/api/courses")
-    public void deleteCourseById(@PathVariable(value = "id") Long id) {
-        this.coursesService.deleteById(id);
+    @DeleteMapping("/api/courses/{id}")
+    public void deleteCourseById(@RequestParam(value = "id", required = false) Long idToDelete) {
+        this.coursesService.deleteById(idToDelete);
     }
 }

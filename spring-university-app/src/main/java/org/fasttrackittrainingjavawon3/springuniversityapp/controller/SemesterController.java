@@ -29,14 +29,18 @@ public class SemesterController {
         this.semesterService.addSemester(toAdd);
         return ResponseEntity.ok().build();
     }
+
     // get by id as a request param
     @GetMapping(path = "api/semesters/{id}")
     public void getById(@RequestParam(value = "id", required = false) Long id){
         this.semesterService.returnById(id);
     }
+
+
+
     // delete by id
-    @DeleteMapping(path = "/api/semesters")
-    public void deleteSemester(@PathVariable (value = "id") Long id){
+    @DeleteMapping(path = "/api/semesters/{id}")
+    public void deleteSemester(@RequestParam(value = "id", required = false) Long id){
         this.semesterService.deleteSemester(id);
     }
 }
